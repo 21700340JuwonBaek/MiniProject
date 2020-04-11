@@ -38,7 +38,11 @@ int main(void){
 	#endif
         }
         else if(select == 2){
+<<<<<<< HEAD
             multi_readProduct(s,count);
+=======
+           multi_readProduct(s,count);
+>>>>>>> 8bc8bd405661f9dc5294c802e0ed2ca1aa033467
 	#ifdef DEBUG
 	printf("Debug : %s %s %s %d. readProduct(s,count) used.\n\n ", __DATE__, __TIME__, __FILE__, __LINE__);
 	#endif
