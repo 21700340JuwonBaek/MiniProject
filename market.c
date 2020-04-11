@@ -7,6 +7,7 @@ void selectMenu(){
     \n3.아이템 업데이트\
     \n4.아이템 삭제\
     \n5.Save!\
+    \n6.Load!\
     \n0.종료\n");
 
 }
@@ -21,7 +22,7 @@ return select;}
 int main(void){
 
         product s[100];
-    int count = 0;
+    int count = loadData(s);
     while(1){
         selectMenu();
 	int select=UserSelect();
@@ -61,10 +62,16 @@ int main(void){
 	else if(select == 5){
 	SaveData(s,count);
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.\ SaveData(s,count) used. Number of saved datus are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	printf("Debug : %s %s %s %d.\ SaveData(s,count) used. Number of saved data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
 	}
 
+	else if(select == 6){
+	count = loadData(s);
+	#ifdef DEBUG
+	printf("Debug : %s %s %s %d.\ loadData(s) used. Number of loaded data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	#endif
+	}
         if(select == 0){
 	#ifdef DEBUG
 	printf("Debug : %s %s %s %d.  Program closed.\n\n ", __DATE__, __TIME__, __FILE__, __LINE__);
