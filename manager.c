@@ -162,4 +162,38 @@ void SearchPrice(product s[],int count){
 }
 }
 
+void Search(product s[],int count){
+    if(count == 0) {printf("데이터가 없습니다!");return;}
 
+while(1){
+
+   printf("검색모드를 선택해주세요!\
+    \n\n1.이름으로 찾기\
+    \n2.평점으로 찾기\
+    \n3.가격으로 찾기\
+    \n4.메인메뉴로 가기\n");
+
+    int select;
+    scanf("%d",&select);
+    if(select == 1){
+      SearchName(s,count);
+    }
+
+
+    if(select == 2) {
+             SearchReputaion(s,count);
+
+}
+
+ if(select == 3) {
+    SearchPrice(s,count);
+}
+
+if(select == 4){
+    printf("검색을 종료합니다\n");
+    break;
+}
+
+}
+
+}
