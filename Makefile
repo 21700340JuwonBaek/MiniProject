@@ -10,6 +10,6 @@ $(DTARGET) : $(OBJ)
 	$(CC) -DDEBUG -o $@ $^
 
 clean : 
-	rm *.o $(TARGET) $(DTARGET) 
+	rm *.o $(TARGET) $(DTARGET) *.txt
 
 

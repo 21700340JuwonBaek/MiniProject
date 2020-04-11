@@ -92,3 +92,22 @@ void SaveData(product s[],int count){
     fclose(fp2);
 
 }
+
+int loadData(product s[]){
+       FILE *fp1;
+    FILE *fp2;
+
+    fp1 = fopen("product_name.txt","rt");
+    fp2 = fopen("product.txt","rt");
+    if(fp1==NULL || fp2 == NULL) {
+        printf("파일이 없습니다!\n");return 0;
+    }
+    int i = 0;
+    while(feof(fp1)==0&&feof(fp2)==0){
+    fgets(s[i].name,30,fp1);
+     s[i].name[strlen(s[i].name)-1]='\0';
+    fscanf(fp2,"%d %d %f %f\n",&s[i].weight,&s[i].price,&s[i].weight_per_price,&s[i].reputation);
+    i++;
+    }
+    return i;
+}
