@@ -6,6 +6,7 @@ void selectMenu(){
     \n2.아이템 조회\
     \n3.아이템 업데이트\
     \n4.아이템 삭제\
+    \n5.Save!\
     \n0.종료\n");
 
 }
@@ -37,7 +38,7 @@ int main(void){
 	#endif
         }
         else if(select == 2){
-            readProduct(s,count);
+            multi_readProduct(s,count);
 	#ifdef DEBUG
 	printf("Debug : %s %s %s %d. readProduct(s,count) used.\n\n ", __DATE__, __TIME__, __FILE__, __LINE__);
 	#endif
@@ -57,6 +58,12 @@ int main(void){
  deleteProduct(s,count) used. Variable count is newly initialized to %d\n\n ", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
         }
+	else if(select == 5){
+	SaveData(s,count);
+	#ifdef DEBUG
+	printf("Debug : %s %s %s %d.\ SaveData(s,count) used. Number of saved datus are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	#endif
+	}
 
         if(select == 0){
 	#ifdef DEBUG

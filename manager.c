@@ -75,4 +75,20 @@ int multi_deleteProduct(product s[], int count){
 }
 
 
+void SaveData(product s[],int count){
+    if(count==0){printf("데이터 없음!\n");return;}
+    FILE *fp1;
+    FILE *fp2;
 
+    fp1 = fopen("product_name.txt","wt");
+    fp2 = fopen("product.txt","wt");
+
+    for(int i = 0; i<count;i++){
+        fprintf(fp1,"%s\n",s[i].name);
+         fprintf(fp2,"%d %d %f %f\n",s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+    }
+    printf("저장완료!\n");
+    fclose(fp1);
+    fclose(fp2);
+
+}

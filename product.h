@@ -24,7 +24,7 @@ int updateProduct(product s[], int count);
 int deleteProduct(product s[], int count);
 //구조체 배열에 저장된 상품중에서 삭제할 상품이 있을 시 사용할 함수입니다.
 
-void saveData(product s[],int count);
+void SaveData(product s[],int count);
 //상품의 리스트를 컴퓨터에 저장합니다.
 
 int loadData(product s[]);
