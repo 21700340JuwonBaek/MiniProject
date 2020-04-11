@@ -128,3 +128,20 @@ void SearchName(product s[],int count){
         }
         if(y_n == 0)printf("%s의 검색결과가 없습니다!\n",name);
 }
+
+void SearchReputaion(product s[],int count){
+
+        printf("평점을 입력해주세요!\n");
+        float reputation;
+       int y_n = 0;
+        scanf("%f",&reputation);
+        for(int i = 0; i<count; i++){
+            if(reputation <= s[i].reputation){
+                      printf("%20s%5d%6d%5.0f%5.1f\n"\
+            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+            y_n++;
+        }
+        }
+
+        if(y_n == 0)printf("%.1f보다 평점이 높은 아이템의 검색결과가 없습니다!\n",reputation);
+}
