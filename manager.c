@@ -145,3 +145,21 @@ void SearchReputaion(product s[],int count){
 
         if(y_n == 0)printf("%.1f보다 평점이 높은 아이템의 검색결과가 없습니다!\n",reputation);
 }
+
+void SearchPrice(product s[],int count){
+  printf("가격 입력해주세요!\n");
+        int price;
+       int y_n = 0;
+        scanf("%f",&price);
+        for(int i = 0; i<count; i++){
+            if(price >= s[i].price){
+                      printf("%20s%5d%6d%5.0f%5.1f\n"\
+            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+            y_n++;
+        }
+
+        if(y_n == 0)printf("%d보다 가격이 낮은 아이템의 검색결과가 없습니다!\n",price);
+}
+}
+
+
