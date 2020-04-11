@@ -118,7 +118,8 @@ void SearchName(product s[],int count){
         char name[30];
         int enter;
         enter = getchar();
-        gets(name);
+        fgets(name,30,stdin);
+	name[strlen(name)-1] = '\0';
             printf("\t이름\t중량\t가격\t10g당 가격\t평점\n");
         for(int i = 0; i<count;i++){
             if(strstr(s[i].name,name)) {printf("%20s%5d%6d%5.0f%5.1f\n"\
@@ -150,7 +151,7 @@ void SearchPrice(product s[],int count){
   printf("가격 입력해주세요!\n");
         int price;
        int y_n = 0;
-        scanf("%f",&price);
+        scanf("%d",&price);
         for(int i = 0; i<count; i++){
             if(price >= s[i].price){
                       printf("%20s%5d%6d%5.0f%5.1f\n"\

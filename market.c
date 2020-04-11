@@ -8,6 +8,7 @@ void selectMenu(){
     \n4.아이템 삭제\
     \n5.Save!\
     \n6.Load!\
+    \n7.검색\
     \n0.종료\n");
 
 }
@@ -72,6 +73,14 @@ int main(void){
 	printf("Debug : %s %s %s %d.\ loadData(s) used. Number of loaded data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
 	}
+	
+	else if(select == 7){
+	Search(s,count);
+	#ifdef DEBUG
+	printf("Debug : %s %s %s %d.\ Search(s,count) used. Number of data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	#endif
+	} 
+
         if(select == 0){
 	#ifdef DEBUG
 	printf("Debug : %s %s %s %d.  Program closed.\n\n ", __DATE__, __TIME__, __FILE__, __LINE__);
