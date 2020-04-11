@@ -111,3 +111,20 @@ int loadData(product s[]){
     }
     return i;
 }
+
+void SearchName(product s[],int count){
+ printf("찾고자 하는 아이템의 이름을 적어주세요!\n");
+        int y_n = 0;
+        char name[30];
+        int enter;
+        enter = getchar();
+        gets(name);
+            printf("\t이름\t중량\t가격\t10g당 가격\t평점\n");
+        for(int i = 0; i<count;i++){
+            if(strstr(s[i].name,name)) {printf("%20s%5d%6d%5.0f%5.1f\n"\
+            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+            y_n++;
+            }
+        }
+        if(y_n == 0)printf("%s의 검색결과가 없습니다!\n",name);
+}
