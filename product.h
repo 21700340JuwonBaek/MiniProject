@@ -35,8 +35,3 @@ void SearchReputaion(product s[],int count);
 void SearchPrice(product s[],int count);
 //가격을 입력받아, 입력받은 가격 이하의 상품을 출력해줍니다.
 
-void selectMenu();
-//사용자에게 선택지를 보여주는 함수입니다.
-
-void User_Select();
-//사용자가 선택을 할 수 있게 하는 함수
