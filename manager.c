@@ -6,11 +6,11 @@
 
 void multi_readProduct(product s[], int count){
     if(count == 0) {printf("데이터가 없습니다!\n\n");return;}
-
     printf("No.      이름      중량    가격     표준가격     평점\n");
     for(int i=0; i<count;i++){
         printf("%d %15s%5dg%6d원   %5.0f원     %5.1f점\n",i+1,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
     }
+printf("\n");
     }
 
 int multi_updateProduct(product s[], int count){
@@ -76,7 +76,7 @@ int multi_deleteProduct(product s[], int count){
 
 
 void SaveData(product s[],int count){
-    if(count==0){printf("데이터 없음!\n");return;}
+    if(count==0){printf("데이터 없음!\n\n");return;}
     FILE *fp1;
     FILE *fp2;
 
@@ -91,6 +91,8 @@ void SaveData(product s[],int count){
     fclose(fp1);
     fclose(fp2);
 
+printf("\n");
+
 }
 
 int loadData(product s[]){
@@ -100,7 +102,7 @@ int loadData(product s[]){
     fp1 = fopen("product_name.txt","rt");
     fp2 = fopen("product.txt","rt");
     if(fp1==NULL || fp2 == NULL) {
-        printf("파일이 없습니다!\n");return 0;
+        printf("파일이 없습니다!\n\n");return 0;
     }
     int i = 0;
     while(feof(fp1)==0&&feof(fp2)==0){
@@ -109,6 +111,7 @@ int loadData(product s[]){
     fscanf(fp2,"%d %d %f %f\n",&s[i].weight,&s[i].price,&s[i].weight_per_price,&s[i].reputation);
     i++;
     }
+	printf("Load 성공!\n\n");
     return i;
 }
 
@@ -119,16 +122,18 @@ void SearchName(product s[],int count){
         int enter;
         enter = getchar();
         fgets(name,30,stdin);
+    printf("No.      이름      중량    가격     표준가격     평점\n");
 	name[strlen(name)-1] = '\0';
-            printf("\t이름\t중량\t가격\t10g당 가격\t평점\n");
         for(int i = 0; i<count;i++){
-            if(strstr(s[i].name,name)) {printf("%20s%5d%6d%5.0f%5.1f\n"\
-            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+            if(strstr(s[i].name,name)){ 
+        printf("%d %15s%5dg%6d원   %5.0f원     %5.1f점\n",i+1,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
             y_n++;
             }
         }
         if(y_n == 0)printf("%s의 검색결과가 없습니다!\n",name);
+	printf("\n");
 }
+
 
 void SearchReputaion(product s[],int count){
 
@@ -136,15 +141,16 @@ void SearchReputaion(product s[],int count){
         float reputation;
        int y_n = 0;
         scanf("%f",&reputation);
+    printf("No.      이름      중량    가격     표준가격     평점\n");
         for(int i = 0; i<count; i++){
             if(reputation <= s[i].reputation){
-                      printf("%20s%5d%6d%5.0f%5.1f\n"\
-            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+        printf("%d %15s%5dg%6d원   %5.0f원     %5.1f점\n",i+1,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
             y_n++;
         }
         }
 
         if(y_n == 0)printf("%.1f보다 평점이 높은 아이템의 검색결과가 없습니다!\n",reputation);
+	printf("\n");
 }
 
 void SearchPrice(product s[],int count){
@@ -153,18 +159,19 @@ void SearchPrice(product s[],int count){
        int y_n = 0;
         scanf("%d",&price);
         for(int i = 0; i<count; i++){
+    printf("No.      이름      중량    가격     표준가격     평점\n");
             if(price >= s[i].price){
-                      printf("%20s%5d%6d%5.0f%5.1f\n"\
-            ,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
+        printf("%d %15s%5dg%6d원   %5.0f원     %5.1f점\n",i+1,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
             y_n++;
         }
 
         if(y_n == 0)printf("%d보다 가격이 낮은 아이템의 검색결과가 없습니다!\n",price);
+	printf("\n");
 }
 }
 
 void Search(product s[],int count){
-    if(count == 0) {printf("데이터가 없습니다!");return;}
+    if(count == 0) {printf("데이터가 없습니다!\n\n");return;}
 
 while(1){
 
@@ -191,7 +198,7 @@ while(1){
 }
 
 if(select == 4){
-    printf("검색을 종료합니다\n");
+    printf("검색을 종료합니다\n\n");
     break;
 }
 
