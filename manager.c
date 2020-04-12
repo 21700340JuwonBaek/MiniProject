@@ -158,8 +158,8 @@ void SearchPrice(product s[],int count){
         int price;
        int y_n = 0;
         scanf("%d",&price);
-        for(int i = 0; i<count; i++){
     printf("No.      이름      중량    가격     표준가격     평점\n");
+        for(int i = 0; i<count; i++){
             if(price >= s[i].price){
         printf("%d %15s%5dg%6d원   %5.0f원     %5.1f점\n",i+1,s[i].name,s[i].weight,s[i].price,s[i].weight_per_price,s[i].reputation);
             y_n++;
