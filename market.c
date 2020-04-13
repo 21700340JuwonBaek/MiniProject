@@ -35,8 +35,7 @@ int main(void){
         if(select ==1){
             if(addproduct(&s[count])==0)count++;
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.Variable count initialized to %d.\
- addproduct(&s[count]) used.\n\n ", __DATE__, __TIME__ , __FILE__, __LINE__, count);
+	printf("Debug : %s %s %s %d.Variable count initialized to %d.addproduct(&s[count]) used.\n\n ", __DATE__, __TIME__ , __FILE__, __LINE__, count);
 	#endif
         }
         else if(select == 2){
@@ -56,28 +55,27 @@ int main(void){
          else if(select == 4){
           count = multi_deleteProduct(s,count);
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.\
- deleteProduct(s,count) used. Variable count is newly initialized to %d\n\n ", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	printf("Debug : %s %s %s %d. deleteProduct(s,count) used. Variable count is newly initialized to %d\n\n ", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
         }
 	else if(select == 5){
 	SaveData(s,count);
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.\ SaveData(s,count) used. Number of saved data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	printf("Debug : %s %s %s %d. SaveData(s,count) used. Number of saved data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
 	}
 
 	else if(select == 6){
 	count = loadData(s);
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.\ loadData(s) used. Number of loaded data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	printf("Debug : %s %s %s %d. loadData(s) used. Number of loaded data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
 	}
 	
 	else if(select == 7){
 	Search(s,count);
 	#ifdef DEBUG
-	printf("Debug : %s %s %s %d.\ Search(s,count) used. Number of data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
+	printf("Debug : %s %s %s %d. Search(s,count) used. Number of data are %d", __DATE__, __TIME__, __FILE__, __LINE__,count);
 	#endif
 	} 
 
@@ -89,4 +87,3 @@ int main(void){
 
 }
 }
-
